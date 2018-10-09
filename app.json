@@ -29,10 +29,10 @@
         "nl": "Gledopto WW/CW Controller"
       },
       "class": "light",
-      "capabilities": [ "onoff", "dim", "light_temperature"  ],
+      "capabilities": [ "onoff", "dim", "light_temperature" ],
        "images": {
-        "large": "/drivers/gledopto_rgb/assets/images/large.jpg",
-        "small": "/drivers/gledopto_rgb/assets/images/small.jpg"
+        "large": "/drivers/gledopto_wwcw/assets/images/large.jpg",
+        "small": "/drivers/gledopto_wwcw/assets/images/small.jpg"
       },
       "zigbee": {
         "manufacturerName": [ "GLEDOPTO" ],
