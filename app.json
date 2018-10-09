@@ -5,12 +5,12 @@
   "compatibility": ">=1.5.11",
   "category": "lights",
   "name": {
-    "en": "Gledopto RGB Controller (ZigBee)",
-    "nl": "Gledopto RGB Controller (ZigBee)"
+    "en": "Gledopto Controllers (ZigBee)",
+    "nl": "Gledopto Controllers (ZigBee)"
   },
   "description": {
-    "en": "Control your Gledopto RGB Controller (ZigBee) with Homey!",
-    "nl": "Gebruik je Gledopto RGB Controller (ZigBee) met Homey!"
+    "en": "Control your Gledopto Controller (ZigBee) with Homey!",
+    "nl": "Gebruik je Gledopto Controller (ZigBee) met Homey!"
   },
   "author": {
     "name": "Marco Ruiter",
@@ -22,64 +22,48 @@
   },
   "speech": [],
   "drivers": [
-	{
-     "id": "gledopto_rgb",
-     "name": {
-       "en": "Gledopto Controller",
-       "nl": "Gledopto Controller"
-     },
-	 "mobile": {
-            "components": [
-                {
-                    "id": "icon",
-                    "capabilities": [ "onoff" ]
-                },
-                {
-                    "id": "toggle",
-                    "capabilities": [ "onoff" , "onoff.1" ],
-                    "options": {
-                        "showTitle": true
-                    }
-                },
-                {
-                    "id": "color",
-                    "capabilities": [ "light_hue" , "light_saturation" , "light_temperature" , "light_mode" ]
-                }
-            ]
-        },
-     "class": "light",
-     "capabilities": [
-       "onoff",
-	   "onoff.1",
-       "dim",
-       "light_hue",
-       "light_saturation",
-       "light_temperature",
-       "light_mode"
-	     ],
-	   "capabilitiesOptions": { 
-          "onoff": { 
-            "title": { 
-              "en": "RGB" 
-            }, 
-            "greyout": false 
-          }, 
-          "onoff.1": { 
-            "title": { 
-              "en": "WHITE" 
-            }, 
-            "greyout": false 
-          }
-		 },
-
-      "images": {
+    {
+      "id": "gledopto_wwcw",
+      "name": {
+        "en": "Gledopto WW/CW Controller",
+        "nl": "Gledopto WW/CW Controller"
+      },
+      "class": "light",
+      "capabilities": [ "onoff", "dim", "light_temperature"  ],
+       "images": {
         "large": "/drivers/gledopto_rgb/assets/images/large.jpg",
         "small": "/drivers/gledopto_rgb/assets/images/small.jpg"
       },
       "zigbee": {
         "manufacturerName": [ "GLEDOPTO" ],
         "productId": [ "GLEDOPTO" ],
-        "deviceId": [528,256],
+        "deviceId": 544,
+        "profileId": 49246,
+        "learnmode": {
+          "instruction": {
+            "en": "Follow the instructions in the Gledopto manual",
+            "nl": "Volg de instructies in uw Gledopto handleiding"
+          }
+        }
+       }
+      },
+
+    {
+      "id": "gledopto_rgb",
+      "name": {
+        "en": "Gledopto RGB Controller",
+        "nl": "Gledopto RGB Controller"
+      },
+      "class": "light",
+      "capabilities": [ "onoff", "dim", "light_hue" , "light_saturation" , "light_temperature" , "light_mode"   ],
+       "images": {
+        "large": "/drivers/gledopto_rgb/assets/images/large.jpg",
+        "small": "/drivers/gledopto_rgb/assets/images/small.jpg"
+      },
+      "zigbee": {
+        "manufacturerName": [ "GLEDOPTO" ],
+        "productId": [ "GLEDOPTO" ],
+        "deviceId": 528,
         "profileId": 49246,
         "learnmode": {
           "instruction": {
@@ -88,6 +72,7 @@
           }
         }
       },
+
       "settings": [
         {
           "id": "transition_time",
