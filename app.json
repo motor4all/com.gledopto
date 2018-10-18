@@ -1,6 +1,6 @@
 {
   "id": "com.gledopto",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "sdk": 2,
   "compatibility": ">=1.5.11",
   "category": "lights",
@@ -13,30 +13,29 @@
     "nl": "Gebruik je Gledopto Controller (ZigBee) met Homey!"
   },
   "author": {
-    "name": "Marco Ruiter",
-	"email": "mruiter@tuxweb.nl"
+    "name": "F Steinhauser",
+    "email": "f.steinhauser@outlook.com"
   },
   "images": {
     "large": "assets/images/large.jpg",
     "small": "assets/images/small.jpg"
   },
   "speech": [],
-  "drivers": [
-    {
+  "drivers": [{
       "id": "gledopto_wwcw",
       "name": {
         "en": "Gledopto WW/CW Controller",
         "nl": "Gledopto WW/CW Controller"
       },
       "class": "light",
-      "capabilities": [ "onoff", "dim", "light_temperature" ],
-       "images": {
+      "capabilities": ["onoff", "dim", "light_temperature"],
+      "images": {
         "large": "/drivers/gledopto_wwcw/assets/images/large.jpg",
         "small": "/drivers/gledopto_wwcw/assets/images/small.jpg"
       },
       "zigbee": {
-        "manufacturerName": [ "GLEDOPTO" ],
-        "productId": [ "GLEDOPTO" ],
+        "manufacturerName": ["GLEDOPTO"],
+        "productId": ["GLEDOPTO"],
         "deviceId": 544,
         "profileId": 49246,
         "learnmode": {
@@ -45,9 +44,8 @@
             "nl": "Volg de instructies in uw Gledopto handleiding"
           }
         }
-       }
-      },
-
+      }
+    },
     {
       "id": "gledopto_rgb",
       "name": {
@@ -55,14 +53,14 @@
         "nl": "Gledopto RGB Controller"
       },
       "class": "light",
-      "capabilities": [ "onoff", "dim", "light_hue" , "light_saturation" , "light_temperature" , "light_mode"   ],
-       "images": {
+      "capabilities": ["onoff", "dim", "light_hue", "light_saturation", "light_temperature", "light_mode"],
+      "images": {
         "large": "/drivers/gledopto_rgb/assets/images/large.jpg",
         "small": "/drivers/gledopto_rgb/assets/images/small.jpg"
       },
       "zigbee": {
-        "manufacturerName": [ "GLEDOPTO" ],
-        "productId": [ "GLEDOPTO" ],
+        "manufacturerName": ["GLEDOPTO"],
+        "productId": ["GLEDOPTO"],
         "deviceId": 528,
         "profileId": 49246,
         "learnmode": {
@@ -71,27 +69,32 @@
             "nl": "Volg de instructies in uw Gledopto handleiding"
           }
         }
+      }
+    },
+    {
+      "id": "gledopto_ww",
+      "name": {
+        "en": "Gledopto WW Controller",
+        "nl": "Gledopto WW Controller"
       },
-
-      "settings": [
-        {
-          "id": "transition_time",
-          "type": "number",
-          "label": {
-            "en": "Transition Time",
-            "nl": "Overgangstijd"
-          },
-          "hint": {
-            "en": "This setting determines the time in seconds it takes to dim from one level to another.",
-            "nl": "Deze instelling bepaalt de duur in seconden van het dimmen van een niveau naar een ander."
-          },
-          "value": 1,
-          "attr": {
-            "min": 0,
-            "max": 6553
+      "class": "light",
+      "capabilities": ["onoff", "dim"],
+      "images": {
+        "large": "/drivers/gledopto_rgb/assets/images/large.jpg",
+        "small": "/drivers/gledopto_rgb/assets/images/small.jpg"
+      },
+      "zigbee": {
+        "manufacturerName": ["GLEDOPTO"],
+        "productId": ["GLEDOPTO"],
+        "deviceId": 256,
+        "profileId": 49246,
+        "learnmode": {
+          "instruction": {
+            "en": "Follow the instructions in the Gledopto manual",
+            "nl": "Volg de instructies in uw Gledopto handleiding"
           }
         }
-      ]
+      }
     }
   ]
 }

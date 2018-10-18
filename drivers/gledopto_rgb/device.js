@@ -4,18 +4,34 @@ const Homey = require('homey');
 const ZigBeeXYLightDevice = require('homey-meshdriver').ZigBeeXYLightDevice;
 
 class GledoptoRGB extends ZigBeeXYLightDevice {
-	onMeshInit() {
-	this.printNode();
-	this.enableDebug();
-	this.registerCapability('onoff', 'genOnOff', { endpoint: 0 });
-	this.registerCapability('onoff.1', 'genOnOff', { endpoint: 1 });
-	this.registerCapability('dim', 'genLevelCtrl', { endpoint: 0 });
-	this.registerCapability('dim.1', 'genLevelCtrl', { endpoint: 1 });
-	this.registerCapability('light_hue', 'lightingColorCtrl', { endpoint: 1 });
-	this.registerCapability('light_saturation', 'lightingColorCtrl', { endpoint: 1 });
-	this.registerCapability('light_temperature', 'lightingColorCtrl', { endpoint: 1 });
-	this.registerCapability('light_mode', 'lightingColorCtrl', { endpoint: 1 });
-	}
+  onMeshInit() {
+    this.printNode();
+    this.enableDebug();
+    this.registerCapability('onoff', 'genOnOff', {
+      endpoint: 0
+    });
+    this.registerCapability('onoff.1', 'genOnOff', {
+      endpoint: 1
+    });
+    this.registerCapability('dim', 'genLevelCtrl', {
+      endpoint: 0
+    });
+    this.registerCapability('dim.1', 'genLevelCtrl', {
+      endpoint: 1
+    });
+    this.registerCapability('light_hue', 'lightingColorCtrl', {
+      endpoint: 1
+    });
+    this.registerCapability('light_saturation', 'lightingColorCtrl', {
+      endpoint: 1
+    });
+    this.registerCapability('light_temperature', 'lightingColorCtrl', {
+      endpoint: 1
+    });
+    this.registerCapability('light_mode', 'lightingColorCtrl', {
+      endpoint: 1
+    });
+  }
 }
 module.exports = GledoptoRGB;
 
